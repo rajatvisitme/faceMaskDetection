@@ -20,8 +20,8 @@ By Rajat Agrawal
   Use <b>pip</b> to install any missing dependencies.
 ## Before you start -
 Follow the [installation instructions](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md) for tensorflow object detection API.<br>
-Steps to follow to creat your own mask detector.<br>
 Now clone this repo into your tensorflow\models\research\object_detection folder.<br>
+Steps to creat your own mask detector.<br>
 <ol>
   <li>Gathering data</li>
   <li>Labeling data</li>
@@ -35,14 +35,15 @@ Now clone this repo into your tensorflow\models\research\object_detection folder
 ## 1. Gathering data
 Scrap pictures (people wearing and not wearing mask) from internet (Use google-images-download).<br>
 `pip install google-images-download`<br>
-Keep 80% of data in object_detection\images\train and 20% data in object_detection\images\test folde.
+Keep 80% of data in object_detection\images\train and 20% data in object_detection\images\test folder.
 
 ## 2. Labeling data
 Label your data using [LabelImg](https://tzutalin.github.io/labelImg/).<br>
-Move labelmap.pbtxt to training folder.
+Move labelmap.pbtxt to training folder (find in repo).
 
 ## 3. Generating TFRecords for training
-Run these commands in terminal(cmd).
+Run these commands in terminal(cmd).<br>
+(find `xml_to_csv.py` and `generate_tfrecord.py` in repo).
 ```
 python xml_to_csv.py
 python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
@@ -51,9 +52,9 @@ python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=image
   
 ## 4. Configuring training
 Doownload model of your choice (ex: faster_rcnn_inception_v2_coco) from [detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md).<br>
-Now copy the config file (pipeline.config) to training folder.<br>
-Edit the following lines in pipeline.config file -<br><br>
+Now copy the config file (pipeline.config) to training folder.<br><br>
 
+Edit the following lines in pipeline.config file -<br>
 Change the number of classes to 2.<br><br>
 
 Change `fine_tune_checkpoint: "PATH_TO_BE_CONFIGURED/model.ckpt"`<br>
@@ -71,7 +72,7 @@ Change num_examples to number of your test images.<br><br>
 
 Under `eval_input_reader`<br>
 Change `input_path: "PATH_TO_BE_CONFIGURED/mscoco_val.record"`<br>
-to `input_path: "<PATH TO>/object_detection/test.record""`<br>
+to `input_path: "<PATH TO>/object_detection/test.record"`<br>
 and<br>
 Change `label_map_path: "PATH_TO_BE_CONFIGURED/mscoco_label_map.pbtxt"`<br>
 to `label_map_path: "<PATH TO>/object_detection/training/labelmap.pbtxt"`<br><br>
@@ -86,7 +87,7 @@ Run the command in terminal(cmd).<br>
 ```python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/faster_rcnn_inception_v2_pets.config --trained_checkpoint_prefix training/model.ckpt-XXXX --output_directory inference_graph```<br><br>
 
 ## 7. Testing face mask detector
-Run faceMaskDetection.ipynb
+Run `faceMaskDetection.ipynb`
 
 
 
