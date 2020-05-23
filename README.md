@@ -2,6 +2,15 @@
 An effective solution to prevent coronavirus from spreading.<br>
 By Rajat Agrawal
 
+## Results
+<b>Test 1</b><br>
+![alt text](https://github.com/rajatvisitme/faceMaskDetection/blob/master/results/output1.JPG)
+<br><br>
+<b>Test 2</b><br>
+![alt text](https://github.com/rajatvisitme/faceMaskDetection/blob/master/results/output2.JPG)
+<br>
+[Watch full video.](https://www.linkedin.com/posts/rajatvisitme_covid19solutions-coronaravirus-machinelearning-activity-6669641405012541440-JF6a)
+
 <h2>Dependencies</h2> (Also mentioned in requirements.txt)
 <ul>
   <li>Protobuf</li>
