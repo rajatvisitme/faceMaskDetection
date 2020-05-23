@@ -1,0 +1,11 @@
+Protobuf
+Python-tk
+Pillow 1.0
+lxml
+Jupyter notebook
+numpy
+Matplotlib
+Tensorflow (1.14.0 or greater)
+Cython
+contextlib2
+cocoapi
