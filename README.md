@@ -1,6 +1,6 @@
 # Face Mask Detection (COVID-19)
 An effective solution to prevent coronavirus from spreading.<br>
-By Rajat Agrawal
+By [Rajat Agrawal](https://github.com/rajatvisitme/rajatvisitme)
 
 ## Results
 <b>Test 1</b><br>
